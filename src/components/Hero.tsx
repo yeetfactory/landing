@@ -56,7 +56,7 @@ export function Hero() {
           id="hero-title"
           className="font-serif text-[clamp(3.25rem,7vw,6.5rem)] leading-[0.92] tracking-[-0.015em] text-balance [text-shadow:0_2px_30px_rgb(0_0_0/0.25)]"
         >
-          We make small apps and yeet them out the door.
+          We build things and yeet them out the door.
         </h1>
         <p className="mx-auto mt-7 max-w-[30rem] text-lg leading-relaxed text-balance text-white/90 [text-shadow:0_1px_16px_rgb(0_0_0/0.35)]">
           Everything here is free, and all the code is on GitHub.

@@ -6,7 +6,7 @@ import { themeScript } from '#/lib/theme';
 import appCss from '../styles.css?url';
 
 const description =
-  'We make small apps and yeet them out the door: Déjà, Recur and Crumple.';
+  'We build things and yeet them out the door: Déjà, Recur and Crumple.';
 
 export const Route = createRootRoute({
   head: () => ({
