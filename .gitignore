@@ -1,0 +1,17 @@
+# dependencies
+node_modules
+
+# build output
+dist
+
+# TanStack Start working files
+.tanstack
+
+# local env files
+.env
+.env.*
+!.env.example
+
+# misc
+.DS_Store
+.idea
