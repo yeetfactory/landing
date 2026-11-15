@@ -95,12 +95,12 @@ export const projects: readonly Project[] = [
       screens: {
         light: [
           {
-            src: dejaNearbyLight,
-            alt: 'Déjà’s Nearby screen: devices in range',
-          },
-          {
             src: dejaAlertLight,
             alt: 'A following alert, with the places and times as evidence',
+          },
+          {
+            src: dejaNearbyLight,
+            alt: 'Déjà’s Nearby screen: devices in range',
           },
           {
             src: dejaActivityLight,
@@ -109,12 +109,12 @@ export const projects: readonly Project[] = [
         ],
         dark: [
           {
-            src: dejaNearbyDark,
-            alt: 'Déjà’s Nearby screen: devices in range',
-          },
-          {
             src: dejaAlertDark,
             alt: 'A following alert, with the places and times as evidence',
+          },
+          {
+            src: dejaNearbyDark,
+            alt: 'Déjà’s Nearby screen: devices in range',
           },
           { src: dejaActivityDark, alt: 'Activity: returns and alerts by day' },
         ],
