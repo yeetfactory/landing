@@ -12,6 +12,12 @@ import recurHomeDark from '#/assets/projects/recur-home-dark.webp';
 import recurHomeLight from '#/assets/projects/recur-home-light.webp';
 import recurSettingsDark from '#/assets/projects/recur-settings-dark.webp';
 import recurSettingsLight from '#/assets/projects/recur-settings-light.webp';
+import rexiHistoryDark from '#/assets/projects/rexi-history-dark.png';
+import rexiHistoryLight from '#/assets/projects/rexi-history-light.png';
+import rexiReminderDark from '#/assets/projects/rexi-reminder-dark.png';
+import rexiReminderLight from '#/assets/projects/rexi-reminder-light.png';
+import rexiTodayDark from '#/assets/projects/rexi-today-dark.png';
+import rexiTodayLight from '#/assets/projects/rexi-today-light.png';
 import auroraAv1 from '#/assets/scenes/aurora.av1.mp4';
 import auroraH264 from '#/assets/scenes/aurora.h264.mp4';
 import aurora from '#/assets/scenes/aurora.webp';
@@ -27,6 +33,12 @@ import forest from '#/assets/scenes/forest.webp';
 import lakeAv1 from '#/assets/scenes/lake.av1.mp4';
 import lakeH264 from '#/assets/scenes/lake.h264.mp4';
 import lake from '#/assets/scenes/lake.webp';
+import meadowAv1 from '#/assets/scenes/meadow.av1.mp4';
+import meadowH264 from '#/assets/scenes/meadow.h264.mp4';
+import meadow from '#/assets/scenes/meadow.webp';
+import starsAv1 from '#/assets/scenes/stars.av1.mp4';
+import starsH264 from '#/assets/scenes/stars.h264.mp4';
+import stars from '#/assets/scenes/stars.webp';
 import sunsetAv1 from '#/assets/scenes/sunset.av1.mp4';
 import sunsetH264 from '#/assets/scenes/sunset.h264.mp4';
 import sunset from '#/assets/scenes/sunset.webp';
@@ -70,12 +82,66 @@ export interface Project {
   /** The landscape behind the project's screens, by day and by night. */
   scene: Themed<Loop>;
   media: Media;
-  /** What gets thrown across the hero. */
+  /** The preview in the hero carousel. */
   thumb: { kind: 'phone' | 'browser'; src: Themed<string> };
 }
 
-/** Newest worth showing first. The hero throws the first three. */
+const rexiScreens: Themed<readonly Screen[]> = {
+  light: [
+    {
+      src: rexiReminderLight,
+      alt: 'Rexi’s full screen reminder: take, snooze or skip the afternoon dose',
+    },
+    {
+      src: rexiTodayLight,
+      alt: 'Rexi’s Today screen: four pillbox compartments with the afternoon dose due',
+    },
+    {
+      src: rexiHistoryLight,
+      alt: 'Rexi’s history: a week of doses in a pillbox grid',
+    },
+  ],
+  dark: [
+    {
+      src: rexiReminderDark,
+      alt: 'Rexi’s full screen reminder: take, snooze or skip the afternoon dose',
+    },
+    {
+      src: rexiTodayDark,
+      alt: 'Rexi’s Today screen: four pillbox compartments with the afternoon dose due',
+    },
+    {
+      src: rexiHistoryDark,
+      alt: 'Rexi’s history: a week of doses in a pillbox grid',
+    },
+  ],
+};
+
+/** Newest worth showing first. */
 export const projects: readonly Project[] = [
+  {
+    id: 'rexi',
+    name: 'Rexi',
+    promise: 'Your medicines, one day at a time.',
+    description:
+      'An Android app that lays out your day as a pillbox. Take, snooze or skip each dose, with reminders that repeat until you answer. Keep track of what’s left and look back at your week. Everything stays on your phone, with no account or internet permission.',
+    actions: [
+      { label: 'Download for Android', href: `${github}/rexi/releases/latest` },
+      { label: 'View the code', href: `${github}/rexi` },
+    ],
+    scene: {
+      light: { av1: meadowAv1, h264: meadowH264, poster: meadow },
+      dark: { av1: starsAv1, h264: starsH264, poster: stars },
+    },
+    media: {
+      kind: 'phones',
+      screens: rexiScreens,
+    },
+    thumb: {
+      kind: 'phone',
+      src: { light: rexiTodayLight, dark: rexiTodayDark },
+    },
+  },
   {
     id: 'deja',
     name: 'Déjà',
