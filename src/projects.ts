@@ -125,10 +125,7 @@ export const projects: readonly Project[] = [
     promise: 'Your medicines, one day at a time.',
     description:
       'An Android app that lays out your day as a pillbox. Take, snooze or skip each dose, with reminders that repeat until you answer. Keep track of what’s left and look back at your week. Everything stays on your phone, with no account or internet permission.',
-    actions: [
-      { label: 'Download for Android', href: `${github}/rexi/releases/latest` },
-      { label: 'View the code', href: `${github}/rexi` },
-    ],
+    actions: [{ label: 'View the code', href: `${github}/rexi` }],
     scene: {
       light: { av1: meadowAv1, h264: meadowH264, poster: meadow },
       dark: { av1: starsAv1, h264: starsH264, poster: stars },
